@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Adjust the target based on your browser compatibility needs
+    "lib": ["dom", "dom.iterable", "esnext"], // Include necessary libraries
+    "allowJs": true, // Allow compilation of existing JavaScript files
+    "skipLibCheck": true, // Skip type checking for built-in lib.d.ts
+    "esModuleInterop": true, // Enable ES module interop for better compatibility
+    "allowSyntheticDefaultImports": true, // Allow synthetic default imports
+    "strict": true, // Enable strict mode for type safety
+    "jsx": "react", // Specify JSX parsing mode (here, for React)
+    "module": "commonjs", // Module system (can be adjusted for different needs)
+    "sourceMap": true, // Generate source maps for debugging
+    "paths": {
+      "@/src/*": ["./src/*"]
+    }
+  },
+  "include": ["src"] // Include source files from the 'src' directory
+}
