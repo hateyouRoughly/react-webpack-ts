@@ -5,7 +5,7 @@ const ErrorComponent = ({ error, resetErrorBoundary }: { error: Error, resetErro
         console.log(error);
     }, [])
 
-    return <>{error.stack}</>
+    return <div className="text-error">{error.stack}</div>
 }
 
 export default ErrorComponent;

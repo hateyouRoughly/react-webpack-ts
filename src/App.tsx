@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
+import "./style.css";
 
 const App: React.FC = () => {
   useEffect(() => {
-    //throw new Error("Known error");
+    throw new Error("Known error");
   });
 
   return (
