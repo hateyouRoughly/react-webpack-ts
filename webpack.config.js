@@ -13,7 +13,7 @@ module.exports = (env) => {
     entry: "./src/index.tsx", // Main entry point
     output: {
       filename: "bundle.js",
-      path: path.resolve(__dirname, "public"), // Output directory
+      path: path.resolve(__dirname, "dist"), // Output directory
     },
     module: {
       rules: [
