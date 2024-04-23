@@ -7,11 +7,6 @@ import "./style.css";
 const App: React.FC = () => {
   return (
     <RouterProvider router={router} />
-    //<div className="row">
-    //  <div className="col-4 mx-auto mt-5">
-    //    <BootstrapForm />
-    //  </div>
-    //</div>
   );
 };
 
