@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ErrorBoundary } from "react-error-boundary";
-import ErrorComponent from "@/src/components/ErrorComponent";
+import ErrorComponent from "@/components/ErrorComponent";
 import App from "./App"; // Replace with the path to your main React component
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./global.css";
 
 const root = ReactDOM.createRoot(

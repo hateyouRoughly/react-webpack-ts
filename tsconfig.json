@@ -10,8 +10,9 @@
     "jsx": "react", // Specify JSX parsing mode (here, for React)
     "module": "commonjs", // Module system (can be adjusted for different needs)
     "sourceMap": true, // Generate source maps for debugging
-    "paths": {
-      "@/src/*": ["./src/*"]
+    "paths": { //restart project after changing path
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"]
     }
   },
   "include": ["src"] // Include source files from the 'src' directory

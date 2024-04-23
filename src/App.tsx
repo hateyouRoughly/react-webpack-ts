@@ -1,3 +1,4 @@
+import BootstrapForm from "@components/BootstrapForm";
 import React, { useEffect } from "react";
 import "./style.css";
 
@@ -8,8 +9,10 @@ const App: React.FC = () => {
   });
 
   return (
-    <div>
-      <h1>Hello from my React TypeScript Webpack App!</h1>
+    <div className="row">
+      <div className="col-4 mx-auto mt-5">
+        <BootstrapForm />
+      </div>
     </div>
   );
 };
