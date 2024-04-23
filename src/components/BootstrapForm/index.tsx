@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FormEvent, useEffect } from "react";
 
-const BootstrapForm = () => {
+const BootstrapForm = ({ type, onSubmit }: { type: string, onSubmit: (e: FormEvent<HTMLFormElement>) => void }) => {
   return (
     <div className="row">
       <div className="col-4 mx-auto mt-5">
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Email address
@@ -40,7 +40,7 @@ const BootstrapForm = () => {
             </label>
           </div>
           <button type="submit" className="btn btn-primary">
-            Submit
+            {type}
           </button>
         </form>
       </div>

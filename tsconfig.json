@@ -12,7 +12,9 @@
     "sourceMap": true, // Generate source maps for debugging
     "paths": { //restart project after changing path
       "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@context": ["./src/contextApi"],
+      "@context/*": ["./src/contextApi/*"]
     }
   },
   "include": ["src"] // Include source files from the 'src' directory
