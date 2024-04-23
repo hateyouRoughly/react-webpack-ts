@@ -12,8 +12,18 @@ module.exports = (env) => {
     mode, // Adjust to 'production' for production builds
     entry: "./src/index.tsx", // Main entry point
     output: {
-      filename: "bundle.js",
+      filename: '[name].[contenthash].js',
+      chunkFilename: '[name].[contenthash].js',
       path: path.resolve(__dirname, "dist"), // Output directory
+    },
+    performance: {
+      maxAssetSize: 500 * 1024, // 500kb in bytes
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+        minSize: 0, // Set to 0 to enforce splitting regardless of size
+      },
     },
     module: {
       rules: [
@@ -52,6 +62,8 @@ module.exports = (env) => {
       },
       compress: true, // Enable gzip compression for everything served
       port: 8080, // Specify development server port (optional)
+      historyApiFallback: true
     },
+    devtool: false,
   };
 };
