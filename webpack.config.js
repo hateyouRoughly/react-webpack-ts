@@ -3,6 +3,7 @@ delete process.env.TS_NODE_PROJECT;
 const path = require("path");
 const webpack = require("webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
   const mode = env?.mode == "production" ? "production" : "development";
@@ -47,6 +48,7 @@ module.exports = (env) => {
       ],
     },
     plugins: [
+      new HtmlWebpackPlugin(),
       new webpack.DefinePlugin({
         process: {
           env: JSON.stringify(
