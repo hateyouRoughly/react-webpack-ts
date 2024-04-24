@@ -5,6 +5,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
+import "./style.css";
+
 function BasicExample() {
   const { state, dispatch } = contextReducer();
 
@@ -20,8 +22,8 @@ function BasicExample() {
   }, [dispatch]);
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary fixed-top">
-      <Container>
+    <Navbar expand="lg" className="bg-body-tertiary main-header" style={{ height: '100%' }}>
+      <Container style={{ backgroundColor: 'inherit' }}>
         <Navbar.Brand href="#home">
           <img
             alt=""
@@ -55,7 +57,7 @@ function BasicExample() {
 							<Navbar.Text>
             	  Signed in as: <a href="#login">{profile_name}</a>
             	</Navbar.Text>
-              <NavDropdown title={""} id="basic-nav-dropdown">
+              <NavDropdown title={""} id="basic-nav-dropdown" className="dropdown-menu-end">
                 <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
               </NavDropdown>
             </Nav>

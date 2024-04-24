@@ -1,0 +1,9 @@
+.main-header .navbar-toggler {
+    background-color: inherit;
+    border-width: 0;
+}
+
+.main-header .navbar-toggler:hover {
+    box-shadow: none;
+}
+

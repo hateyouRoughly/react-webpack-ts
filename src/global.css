@@ -1,0 +1,5 @@
+:root {
+    /* variabled for layout height and width */
+    --layout-height: 60px;
+    --layout-width: 200px;
+}

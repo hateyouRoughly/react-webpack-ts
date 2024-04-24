@@ -11,14 +11,18 @@ import Register from "@components/Auth/Register";
 import Dashboard from "@components/Dashboard";
 import Middleware from "@components/Auth/Middleware";
 import Layout from "@components/Layout";
+import Listing from "./Listing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    <Route path="/" element={<Outlet />}>
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
-      <Route element={<Middleware active={true}/>} >
-        <Route path="" element={<Dashboard />} />
+      <Route element={<Layout />}>
+        <Route element={<Middleware active={true}/>} >
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/listing" element={<Listing />} />
+        </Route>
       </Route>
       {/* ... etc. */}
     </Route>

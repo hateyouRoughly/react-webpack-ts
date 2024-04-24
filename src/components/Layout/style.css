@@ -1,0 +1,13 @@
+.layout-header{
+    height: var(--layout-height);
+    padding-left: var(--layout-width);
+}
+
+.layout-sidebar{
+    width: var(--layout-width);
+}
+
+.layout-content{
+    padding-top: var(--layout-height);
+    padding-left: var(--layout-width);
+}

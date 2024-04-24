@@ -1,18 +1,9 @@
-import { contextReducer } from "@/contextApi";
-import React, { useCallback } from "react";
+import React from "react";
 
 const Dashboard = () => {
-  const { state, dispatch } = contextReducer();
-  const logout = useCallback(() => {
-    dispatch({
-      type: "LOGOUT",
-    });
-  }, []);
-
   return (
-    <div className="p-4">
+    <div>
       <h4>Dashboard</h4>
-			<div style={{ height: 1600 }}></div>
     </div>
   );
 };

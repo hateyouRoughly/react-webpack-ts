@@ -1,0 +1,11 @@
+.main-sidebar a.active {
+    background-color: #5a5a5a !important;
+}
+
+.main-sidebar .nav-link {
+    color: white;
+}
+
+.main-sidebar .nav-link:hover {
+    color: grey;
+}
