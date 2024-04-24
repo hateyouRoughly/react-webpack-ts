@@ -24,7 +24,7 @@ const Middleware = ({ active }: { active: boolean }) => {
                 } }
             })
         }
-    }, [state, navigate]);
+    }, [state?.token, navigate]);
 
     return <Outlet />
 }

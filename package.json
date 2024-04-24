@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open",
-    "build": "webpack build --env mode=production",
     "start:testing": "webpack serve --env mode=testing --open",
     "start:staging": "webpack serve --env mode=staging --open",
     "start:production": "webpack serve --env mode=production --open",
+    "build": "webpack build",
+    "build:testing": "webpack build --env mode=testing",
+    "build:staging": "webpack build --env mode=staging",
+    "build:production": "webpack build --env mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
