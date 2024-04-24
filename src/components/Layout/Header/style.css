@@ -7,3 +7,14 @@
     box-shadow: none;
 }
 
+.main-header {
+    width: auto;
+}
+
+.main-header > div {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+

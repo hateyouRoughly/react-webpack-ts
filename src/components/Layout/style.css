@@ -1,13 +1,70 @@
-.layout-header{
+.layout-header-max{
     height: var(--layout-height);
     padding-left: var(--layout-width);
+    animation-name: layout-header;
+    animation-duration: 0.2s;
 }
 
-.layout-sidebar{
+.layout-sidebar-max{
     width: var(--layout-width);
+    animation-name: layout-sidebar;
+    animation-duration: 0.2s;
 }
 
-.layout-content{
+.layout-content-max{
     padding-top: var(--layout-height);
     padding-left: var(--layout-width);
+    animation-name: layout-content;
+    animation-duration: 0.2s;
+}
+
+@keyframes layout-header {
+    from {
+        padding-left: var(--layout-min-width);
+    }
+    to {
+        padding-left: var(--layout-width);
+    }
+}
+
+@keyframes layout-sidebar {
+    from {
+        width: var(--layout-min-width);
+    }
+    to {
+        width: var(--layout-width);
+    }
+}
+
+@keyframes layout-content {
+    from {
+        padding-left: var(--layout-min-width);
+    }
+    to {
+        padding-left: var(--layout-width);
+    }
+}
+
+.layout-header-min{
+    height: var(--layout-height);
+    padding-left: var(--layout-min-width);
+    animation-name: layout-header;
+    animation-duration: 0.2s;
+    animation-direction: reverse;
+}
+
+.layout-sidebar-min{
+    width: var(--layout-min-width);
+    animation-name: layout-sidebar;
+    animation-duration: 0.2s;
+    animation-direction: reverse;
+    overflow-x: hidden;
+}
+
+.layout-content-min{
+    padding-top: var(--layout-height);
+    padding-left: var(--layout-min-width);
+    animation-name: layout-content;
+    animation-duration: 0.2s;
+    animation-direction: reverse;
 }

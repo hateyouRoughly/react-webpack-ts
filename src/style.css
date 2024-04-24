@@ -1,5 +1,6 @@
 body {
     min-height: 75rem;
+    overflow-x: hidden;
 }
 
 .text-error {

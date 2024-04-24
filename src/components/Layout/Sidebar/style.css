@@ -1,11 +1,26 @@
 .main-sidebar a.active {
     background-color: #5a5a5a !important;
+    border-radius: 0;
+    border-left: 3px solid white;
 }
 
 .main-sidebar .nav-link {
+    border-left: 3px solid transparent;
     color: white;
 }
 
 .main-sidebar .nav-link:hover {
     color: grey;
+}
+
+.scroll-overflow {
+    overflow-y: scroll;
+}
+
+.scroll-overflow {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.scroll-overflow::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }

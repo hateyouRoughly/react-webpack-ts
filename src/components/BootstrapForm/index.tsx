@@ -2,7 +2,7 @@ import React, { FormEvent, useEffect } from "react";
 
 const BootstrapForm = ({ type, onSubmit }: { type: string, onSubmit: (e: FormEvent<HTMLFormElement>) => void }) => {
   return (
-    <div className="row">
+    <div className="row pt-5">
       <div className="col-4 mx-auto mt-5">
         <form onSubmit={onSubmit}>
           <div className="mb-3">

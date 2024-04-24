@@ -22,6 +22,8 @@ const router = createBrowserRouter(
         <Route element={<Middleware active={true}/>} >
           <Route path="/" element={<Dashboard />} />
           <Route path="/listing" element={<Listing />} />
+          <Route path="/my-product" element={<Listing />} />
+          <Route path="/all-product" element={<Listing />} />
         </Route>
       </Route>
       {/* ... etc. */}
