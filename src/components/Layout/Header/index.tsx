@@ -1,8 +1,7 @@
 import React, { useCallback, useMemo } from "react";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/reactRedux/counterSlice";
 
@@ -12,33 +11,30 @@ function BasicExample() {
   const profile = useSelector((state: any) => state.counter.profile);
   const dispatch = useDispatch();
 
-  const profile_name = useMemo(
-    () => profile?.first_name + " " + profile?.last_name,
-    [profile]
-  );
-
   const _logout = useCallback(() => {
     dispatch(logout());
   }, [dispatch]);
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary main-header w-100" style={{ height: '100%' }}>
-      <div style={{ backgroundColor: 'inherit' }} className="mx-4 w-100">
-        <Navbar.Brand href="#home">
-          WICTrax
-        </Navbar.Brand>
-        {profile?.first_name && (
-          <Navbar.Collapse className="justify-content-end">
-            <Nav className="me-auto justify-content-end" style={{ display: 'contents' }}>
-              <NavDropdown title={""} id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={_logout}>Logout</NavDropdown.Item>
-              </NavDropdown>
-							<Navbar.Text>
-            	  Signed in as: <a href="#login">{profile_name}</a>
-            	</Navbar.Text>
-            </Nav>
-          </Navbar.Collapse>
-        )}
+      <div style={{ backgroundColor: 'inherit' }} className="mx-4 w-100 row">
+        <div className="col">
+          <h5 className="m-0">WICTrax</h5>
+        </div>
+        <div className="col d-flex justify-content-end align-items-center column-gap-3">
+          <div className="global-search row m-0">
+            <div className="col-auto pe-0">
+              <SearchIcon htmlColor="grey"/>
+            </div>
+            <div className="col ps-0">
+              <input className="form-control shadow-none" type="text" placeholder="Search" />
+            </div>
+          </div>
+          <div>
+            <NotificationsIcon htmlColor="grey"/>
+          </div>
+          <div className="profile-icon">OP</div>
+        </div>
       </div>
     </Navbar>
   );

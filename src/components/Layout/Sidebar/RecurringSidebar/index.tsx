@@ -57,9 +57,9 @@ const ChildNavbar = ({
                   ></div>
                 )}{" "}
                 <div className="col-auto p-0">{e.icon}</div>
-                <div className="col p-0">
-                  &nbsp;{sidebarExtend && e.title}
-                </div>
+                {sidebarExtend && (
+                  <div className="col p-0 ps-4">&nbsp;{e.title}</div>
+                )}
               </div>
             </NavLink>
           )}
@@ -87,7 +87,7 @@ const NavbarCollapse = (e: SidebarContent) => {
             ></div>
           )}{" "}
           <div className="col-auto p-0">{e.icon}</div>
-          <div className="col p-0">&nbsp;{e.sidebarExtend && e.title}</div>
+          {e.sidebarExtend && <div className="col p-0 ps-4">&nbsp;{e.title}</div>}
           {e.sidebarExtend && (
             <div className="col-auto p-0">
               {open ? (

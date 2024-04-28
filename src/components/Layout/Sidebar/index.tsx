@@ -43,24 +43,23 @@ const Sidebar = ({
   }, []);
 
   return (
-    <div className="container-fluid main-sidebar bg-dark">
+    <div className="container-fluid main-sidebar">
       <div className="row d-flex">
         <div
-          className="py-3 text-white scroll-overflow"
-          style={{ height: "80vh" }}
+          className="text-white scroll-overflow"
+          style={{ height: "100vh", paddingBottom: '60px', paddingTop: '100px' }}
         >
           <a
             href="#"
-            className="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+            className="d-flex align-items-center justify-content-center mb-md-0 me-md-auto text-white text-decoration-none pb-2 header-logo"
           >
             <img
               alt=""
               src="/images/logo.png"
-              width={sidebarExtend ? 120 : 50}
+              style={{height: '60%', width: '100%', objectFit: 'contain', padding: '0px 10px'}}
               className="d-inline-block align-top"
             />{" "}
           </a>
-          <hr />
           <RecurringNav sidebarExtend={sidebarExtend} />
           <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item" onClick={_logout}>
@@ -72,24 +71,28 @@ const Sidebar = ({
           </ul>
         </div>
         <div
-          className={`d-flex align-items-center justify-content-${
-            sidebarExtend ? "end" : "center"
-          }`}
-          style={{ height: "20vh" }}
+          className={`d-flex align-items-end p-0 sidebar-toggle`}
+          style={{ height: "50px", position: 'absolute', bottom: 0 }}
         >
+          <div className={`d-flex align-items-center col p-4 justify-content-${
+            sidebarExtend ? "end" : "center"
+          }`}>
           {navbarSize === "max" ? (
             <ArrowBackIosIcon
               htmlColor={"white"}
               onClick={toggleNavbar}
               role="button"
+              style={{ fontSize: 14 }}
             />
           ) : (
             <ArrowForwardIosIcon
               htmlColor={"white"}
               onClick={toggleNavbar}
               role="button"
+              style={{ fontSize: 14 }}
             />
           )}
+          </div>
         </div>
       </div>
     </div>

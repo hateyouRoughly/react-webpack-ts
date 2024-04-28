@@ -1,5 +1,9 @@
+.main-sidebar {
+    background-color: var(--primary-color);
+}
+
 .main-sidebar a.active {
-    background-color: #5a5a5a !important;
+    background-color: var(--secondary-color) !important;
     border-radius: 0;
     border-left: 3px solid white;
 }
@@ -23,4 +27,18 @@
 }
 .scroll-overflow::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
+}
+
+.sidebar-toggle > div{
+    background-color: var(--secondary-color);
+    height: 35px;
+}
+
+.header-logo {
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: var(--primary-color) !important;
 }

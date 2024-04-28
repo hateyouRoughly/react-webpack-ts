@@ -18,3 +18,30 @@
     justify-content: space-between;
 }
 
+.global-search {
+    border: 1px solid grey;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.global-search input{
+    background-color: inherit;
+    border: none;
+    height: 35px;
+}
+
+.global-search input:focus{
+    background-color: inherit;
+}
+
+.profile-icon {
+    background-color: var(--primary-color);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
