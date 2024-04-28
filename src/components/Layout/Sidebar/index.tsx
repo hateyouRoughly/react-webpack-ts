@@ -47,7 +47,11 @@ const Sidebar = ({
       <div className="row d-flex">
         <div
           className="text-white scroll-overflow"
-          style={{ height: "100vh", paddingBottom: '60px', paddingTop: '100px' }}
+          style={{
+            height: "100vh",
+            paddingBottom: "60px",
+            paddingTop: "100px",
+          }}
         >
           <a
             href="#"
@@ -56,7 +60,12 @@ const Sidebar = ({
             <img
               alt=""
               src="/images/logo.png"
-              style={{height: '60%', width: '100%', objectFit: 'contain', padding: '0px 10px'}}
+              style={{
+                height: "60%",
+                width: "100%",
+                objectFit: "contain",
+                padding: "0px 10px",
+              }}
               className="d-inline-block align-top"
             />{" "}
           </a>
@@ -64,34 +73,42 @@ const Sidebar = ({
           <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item" onClick={_logout}>
               <a href="#" className="nav-link">
-                <ExitToAppIcon htmlColor={"white"} />{" "}
-                {sidebarExtend && "Logout"}
+                <div className="row m-0 align-items-center">
+                  <div className="col-auto p-0">
+                    <ExitToAppIcon htmlColor={"white"} />{" "}
+                  </div>
+                  {sidebarExtend && (
+                    <div className="col p-0 ps-4">&nbsp;{"Logout"}</div>
+                  )}
+                </div>
               </a>
             </li>
           </ul>
         </div>
         <div
           className={`d-flex align-items-end p-0 sidebar-toggle`}
-          style={{ height: "50px", position: 'absolute', bottom: 0 }}
+          style={{ height: "50px", position: "absolute", bottom: 0 }}
         >
-          <div className={`d-flex align-items-center col p-4 justify-content-${
-            sidebarExtend ? "end" : "center"
-          }`}>
-          {navbarSize === "max" ? (
-            <ArrowBackIosIcon
-              htmlColor={"white"}
-              onClick={toggleNavbar}
-              role="button"
-              style={{ fontSize: 14 }}
-            />
-          ) : (
-            <ArrowForwardIosIcon
-              htmlColor={"white"}
-              onClick={toggleNavbar}
-              role="button"
-              style={{ fontSize: 14 }}
-            />
-          )}
+          <div
+            className={`d-flex align-items-center col p-4 justify-content-${
+              sidebarExtend ? "end" : "center"
+            }`}
+          >
+            {navbarSize === "max" ? (
+              <ArrowBackIosIcon
+                htmlColor={"white"}
+                onClick={toggleNavbar}
+                role="button"
+                style={{ fontSize: 14 }}
+              />
+            ) : (
+              <ArrowForwardIosIcon
+                htmlColor={"white"}
+                onClick={toggleNavbar}
+                role="button"
+                style={{ fontSize: 14 }}
+              />
+            )}
           </div>
         </div>
       </div>
