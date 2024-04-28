@@ -1,23 +1,24 @@
-import { contextReducer } from "@/contextApi";
 import React, { useCallback, useMemo } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "@/reactRedux/counterSlice";
+
 import "./style.css";
 
 function BasicExample() {
-  const { state, dispatch } = contextReducer();
+  const profile = useSelector((state: any) => state.counter.profile);
+  const dispatch = useDispatch();
 
   const profile_name = useMemo(
-    () => state?.profile?.first_name + " " + state?.profile?.last_name,
-    [state?.profile]
+    () => profile?.first_name + " " + profile?.last_name,
+    [profile]
   );
 
-  const logout = useCallback(() => {
-    dispatch({
-      type: "LOGOUT",
-    });
+  const _logout = useCallback(() => {
+    dispatch(logout());
   }, [dispatch]);
 
   return (
@@ -26,11 +27,11 @@ function BasicExample() {
         <Navbar.Brand href="#home">
           WICTrax
         </Navbar.Brand>
-        {state?.profile?.first_name && (
+        {profile?.first_name && (
           <Navbar.Collapse className="justify-content-end">
             <Nav className="me-auto justify-content-end" style={{ display: 'contents' }}>
               <NavDropdown title={""} id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
+                <NavDropdown.Item onClick={_logout}>Logout</NavDropdown.Item>
               </NavDropdown>
 							<Navbar.Text>
             	  Signed in as: <a href="#login">{profile_name}</a>

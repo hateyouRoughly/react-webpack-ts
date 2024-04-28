@@ -49,8 +49,18 @@ const ChildNavbar = ({
               className={`nav-link`}
               aria-current="page"
             >
-              {sidebarExtend && <span style={{ paddingLeft: padding }}></span>}{" "}
-              {e.icon} {sidebarExtend && e.title}
+              <div className="row m-0 align-items-center">
+                {sidebarExtend && (
+                  <div
+                    className="col-auto py-0 pe-0"
+                    style={{ paddingLeft: padding }}
+                  ></div>
+                )}{" "}
+                <div className="col-auto p-0">{e.icon}</div>
+                <div className="col p-0">
+                  &nbsp;{sidebarExtend && e.title}
+                </div>
+              </div>
             </NavLink>
           )}
         </li>
@@ -69,10 +79,10 @@ const NavbarCollapse = (e: SidebarContent) => {
         style={{ cursor: "pointer" }}
         onClick={() => setOpen(!open)}
       >
-        <div className="row m-0">
+        <div className="row m-0 align-items-center">
           {e.sidebarExtend && (
             <div
-              className="col-auto p-0"
+              className="col-auto  py-0 pe-0"
               style={{ paddingLeft: e.padding }}
             ></div>
           )}{" "}

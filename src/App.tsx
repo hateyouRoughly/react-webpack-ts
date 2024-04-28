@@ -1,18 +1,16 @@
 import React, { useEffect, useReducer } from "react";
 import router from "@components/router";
 import { RouterProvider } from "react-router-dom";
-import Context from "@context";
-import reducer from "@context/reducer";
-import initialState from "@context/initialState";
+import { Provider } from 'react-redux';
+import store from "./reactRedux/store";
 
 import "./style.css";
 
 const App: React.FC = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <Context.Provider value={{ state, dispatch }}>
+    <Provider store={store}>
       <RouterProvider router={router} />
-    </Context.Provider>
+    </Provider>
   );
 };
 

@@ -14,7 +14,8 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@context": ["./src/contextApi"],
-      "@context/*": ["./src/contextApi/*"]
+      "@context/*": ["./src/contextApi/*"],
+      "@redux/*": ["./src/reactRedux/*"]
     }
   },
   "include": ["src"] // Include source files from the 'src' directory

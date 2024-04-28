@@ -1,17 +1,15 @@
 import React, { FormEvent, useCallback } from "react"
 import BootstrapForm from "@/components/BootstrapForm"
-import { contextReducer } from "@/contextApi"
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "@/reactRedux/counterSlice";
 
 const Login = () => {
-    const { state, dispatch } = contextReducer();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const onSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch({
-            type: "LOGIN",
-            payload: "fa1b865d9280d4a488afa30fd60216e7"
-        });
+        dispatch(login("fa1b865d9280d4a488afa30fd60216e7"));
         navigate("/");
     }, [])
 

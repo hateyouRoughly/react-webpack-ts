@@ -7,6 +7,8 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { NavbarSize, SidebarList } from "../interface";
 import RecurringNav from "./RecurringSidebar";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import { logout } from "@/reactRedux/counterSlice";
+import { useDispatch } from "react-redux";
 
 const sidebarList: SidebarList = [
   {
@@ -28,12 +30,10 @@ const Sidebar = ({
   setNavbarSize: any;
   navbarSize: NavbarSize;
 }) => {
-  const { dispatch } = contextReducer();
+  const dispatch = useDispatch();
 
-  const logout = useCallback(() => {
-    dispatch({
-      type: "LOGOUT",
-    });
+  const _logout = useCallback(() => {
+    dispatch(logout());
   }, [dispatch]);
 
   const sidebarExtend = useMemo(() => navbarSize === "max", [navbarSize]);
@@ -63,7 +63,7 @@ const Sidebar = ({
           <hr />
           <RecurringNav sidebarExtend={sidebarExtend} />
           <ul className="nav nav-pills flex-column mb-auto">
-            <li className="nav-item" onClick={logout}>
+            <li className="nav-item" onClick={_logout}>
               <a href="#" className="nav-link">
                 <ExitToAppIcon htmlColor={"white"} />{" "}
                 {sidebarExtend && "Logout"}

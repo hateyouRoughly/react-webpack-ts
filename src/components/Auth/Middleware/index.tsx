@@ -1,30 +1,28 @@
 import React, { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom";
-import { contextReducer } from "@/contextApi";
+import { useDispatch, useSelector } from "react-redux";
+import { removeState, setState } from "@/reactRedux/counterSlice";
 
 const Middleware = ({ active }: { active: boolean }) => {
-    const { state, dispatch } = contextReducer();
+    const token = useSelector((state: any) => state.counter.token);
+    const dispatch = useDispatch()
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(active && !state?.token){
-            dispatch({
-                type: "REMOVE_STATE",
-                payload: 'profile'
-            })
+        if(active && !token){
+            dispatch(removeState('profile'));
             navigate("/login");
         }else{
             //get data from API and then set
-            dispatch({
-                type: "SET_STATE", 
-                payload: { profile: {
+            dispatch(setState({
+                profile: {
                     first_name: "liam",
                     last_name: "walters",
                     email: "liam.walters@example.com",
-                } }
-            })
+                }
+            }))
         }
-    }, [state?.token, navigate]);
+    }, [token, navigate]);
 
     return <Outlet />
 }
