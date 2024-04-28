@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sidebarList from "./sidebarList";
 import { SidebarContent, SidebarList } from "../../interface";
 import { NavLink, useLocation } from "react-router-dom";
+import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 
 import "./style.css";
 import { Collapse } from "react-bootstrap";
@@ -48,7 +49,8 @@ const ChildNavbar = ({
               className={`nav-link`}
               aria-current="page"
             >
-							{ sidebarExtend && <span style={{ paddingLeft: padding }}></span> } {e.icon} {sidebarExtend && e.title}
+              {sidebarExtend && <span style={{ paddingLeft: padding }}></span>}{" "}
+              {e.icon} {sidebarExtend && e.title}
             </NavLink>
           )}
         </li>
@@ -64,10 +66,28 @@ const NavbarCollapse = (e: SidebarContent) => {
       <div
         className="nav-link"
         aria-current="page"
-				style={{ cursor: 'pointer' }}
+        style={{ cursor: "pointer" }}
         onClick={() => setOpen(!open)}
       >
-        { e.sidebarExtend && <span style={{ paddingLeft: e.padding }}></span> } {e.icon} { e.sidebarExtend && e.title}
+        <div className="row m-0">
+          {e.sidebarExtend && (
+            <div
+              className="col-auto p-0"
+              style={{ paddingLeft: e.padding }}
+            ></div>
+          )}{" "}
+          <div className="col-auto p-0">{e.icon}</div>
+          <div className="col p-0">&nbsp;{e.sidebarExtend && e.title}</div>
+          {e.sidebarExtend && (
+            <div className="col-auto">
+              {open ? (
+                <ArrowDropUp htmlColor="white" />
+              ) : (
+                <ArrowDropDown htmlColor="white" />
+              )}
+            </div>
+          )}
+        </div>
       </div>
       <Collapse in={open}>
         <div className="navbar-collapse">
@@ -83,16 +103,19 @@ const NavbarCollapse = (e: SidebarContent) => {
   );
 };
 
-const childHasPath: (e: SidebarContent, path: string) => boolean = (e: SidebarContent, path: string) => {
-		if(e.path === path){
-			return true;
-		}else{
-			if(e?.children){
-				return e.children.some(e => childHasPath(e, path));
-			}else{
-				return false;
-			}
-		}
-}
+const childHasPath: (e: SidebarContent, path: string) => boolean = (
+  e: SidebarContent,
+  path: string
+) => {
+  if (e.path === path) {
+    return true;
+  } else {
+    if (e?.children) {
+      return e.children.some((e) => childHasPath(e, path));
+    } else {
+      return false;
+    }
+  }
+};
 
 export default RecurringNav;
