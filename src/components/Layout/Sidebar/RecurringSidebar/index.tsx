@@ -79,7 +79,7 @@ const NavbarCollapse = (e: SidebarContent) => {
           <div className="col-auto p-0">{e.icon}</div>
           <div className="col p-0">&nbsp;{e.sidebarExtend && e.title}</div>
           {e.sidebarExtend && (
-            <div className="col-auto">
+            <div className="col-auto p-0">
               {open ? (
                 <ArrowDropUp htmlColor="white" />
               ) : (
