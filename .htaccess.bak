@@ -7,10 +7,16 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -f
 RewriteRule ^(.*)$ /dist/$1 [L]
 
+# Serve files from public directory if they exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+RewriteRule ^(.*)$ /public/$1 [L]
+
 # Serve index.html from the public directory if no file is found
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /dist/index.html [L]
+RewriteRule ^(.*)$ /public/index.html [L]
 
 # Serve index.html if nothing is added after the domain
-RewriteRule ^$ /dist/index.html [L]
+RewriteRule ^$ /public/index.html [L]
