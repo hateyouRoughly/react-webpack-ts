@@ -11,8 +11,8 @@ const Layout = () => {
 	
   return (
     <div key={navbarSize}>
-      <div className="row">
-        <div className="col-auto p-0">
+      <div className="row m-0">
+        <div className="col-auto">
 					<div className={"fixed-top z-2 layout-sidebar-" + navbarSize}>
 						<Sidebar setNavbarSize={setNavbarSize} navbarSize={navbarSize}/>
 					</div>
@@ -22,7 +22,7 @@ const Layout = () => {
 						<Header />
 					</div>
           <div className={"layout-content-" + navbarSize}>
-						<div className="p-4">
+						<div>
 							<Outlet />
 						</div>
           </div>
