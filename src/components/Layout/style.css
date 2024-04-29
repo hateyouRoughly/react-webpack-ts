@@ -1,3 +1,8 @@
+.layout-content {
+    width: 100vw;
+    height: 100vh;
+}
+
 .layout-header-max{
     height: var(--layout-height);
     padding-left: var(--layout-width);

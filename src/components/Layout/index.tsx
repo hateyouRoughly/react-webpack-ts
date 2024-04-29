@@ -12,12 +12,12 @@ const Layout = () => {
   return (
     <div key={navbarSize}>
       <div className="row m-0">
-        <div className="col-auto">
+        <div className="col-auto p-0">
 					<div className={"fixed-top z-2 layout-sidebar-" + navbarSize}>
 						<Sidebar setNavbarSize={setNavbarSize} navbarSize={navbarSize}/>
 					</div>
 				</div>
-        <div className="col">
+        <div className="col p-0">
 					<div className={"fixed-top z-1 layout-header-" + navbarSize}>
 						<Header />
 					</div>
