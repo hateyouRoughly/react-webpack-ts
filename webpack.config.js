@@ -74,7 +74,8 @@ module.exports = (env) => {
       },
       compress: true, // Enable gzip compression for everything served
       port: 8080, // Specify development server port (optional)
-      historyApiFallback: true
+      historyApiFallback: true,
+      hot: true,
     }
   };
 };
