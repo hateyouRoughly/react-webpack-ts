@@ -33,7 +33,7 @@ function BasicExample() {
           <div>
             <NotificationsIcon htmlColor="grey"/>
           </div>
-          <div className="profile-icon">OP</div>
+          <button className="profile-icon">OP</button>
         </div>
       </div>
     </Navbar>

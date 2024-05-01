@@ -6,3 +6,8 @@ body {
 .text-error {
     color: brown;
 }
+
+.card-title {
+    font-size: larger;
+    font-weight: 600;
+}
