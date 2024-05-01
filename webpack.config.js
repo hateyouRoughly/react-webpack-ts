@@ -14,6 +14,7 @@ module.exports = (env) => {
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, "dist"), // Output directory
+      clean: true
     },
     performance: {
       hints: false,
@@ -22,8 +23,9 @@ module.exports = (env) => {
     },
     optimization: {
       splitChunks: {
-        chunks: 'all',
+        chunks: 'all'
       },
+      runtimeChunk: 'single'
     },
     module: {
       rules: [

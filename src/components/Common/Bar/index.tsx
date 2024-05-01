@@ -13,7 +13,7 @@ const Bar = ({
 }) => {
 
 	const navigate = useNavigate();
-	
+
   const _onBack = useCallback(() => {
 		navigate(-1);
 	}, [navigate]);

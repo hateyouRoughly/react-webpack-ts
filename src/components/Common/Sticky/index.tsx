@@ -1,4 +1,4 @@
-import React, { memo, ReactElement, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, ReactNode, useCallback, useRef, useState } from "react";
 import useResizeObserver from '@react-hook/resize-observer'
 
 const Sticky = ({ children, style, ...props }: { children: ReactNode, style?: React.CSSProperties }) => {
