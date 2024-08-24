@@ -7,6 +7,7 @@
     "esModuleInterop": true, // Enable ES module interop for better compatibility
     "allowSyntheticDefaultImports": true, // Allow synthetic default imports
     "strict": true, // Enable strict mode for type safety
+    "resolveJsonModule": true, // Enable import json modules
     "jsx": "react", // Specify JSX parsing mode (here, for React)
     "module": "commonjs", // Module system (can be adjusted for different needs)
     "sourceMap": true, // Generate source maps for debugging

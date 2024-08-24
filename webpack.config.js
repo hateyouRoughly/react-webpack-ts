@@ -14,7 +14,8 @@ module.exports = (env) => {
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, "dist"), // Output directory
-      clean: true
+      clean: true,
+      publicPath: '/', // Specify the base path for all assets
     },
     performance: {
       hints: false,
@@ -62,7 +63,7 @@ module.exports = (env) => {
             from: './public', 
             to: './',
             filter: (resourcePath) => !resourcePath.endsWith('/index.html') // Exclude based on path
-          } // Copy all public folder assets to dist/public
+          } // Copy all public folder assets to dist folder
         ],
       }),
       new HtmlWebpackPlugin({
